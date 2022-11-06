@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+import {generatePlant} from "./PlantGenerator"
+import Button from '@mui/material/Button';
+import {Box, Typography} from "@mui/material";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [text, setText] = useState(generatePlant());
+
+    function handleClick() {
+        setText(generatePlant());
+    }
+
+    return (
+        <div style={{textAlign: 'center'}}>
+            <Box pt={20} m={0}>
+                <Typography variant="h2" gutterBottom fontFamily={'Alef'}>
+                    {text}
+                </Typography>
+                <Box pt={15}>
+                    <Button onClick={handleClick} variant="contained" size="large" style={{ width: 150 }}>צור חדש</Button>
+                </Box>
+            </Box>
+        </div>
+    );
 }
 
 export default App;

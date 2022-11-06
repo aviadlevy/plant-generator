@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('button exists', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const buttonElement = screen.getByRole('button', {
+    name: /צור חדש/i
+  });
+      expect(buttonElement).toBeDefined();
 });
