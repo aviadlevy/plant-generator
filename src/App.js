@@ -13,7 +13,7 @@ function App() {
 
     return (
         <div style={{textAlign: 'center'}}>
-            <Box pt={20} m={0}>
+            <Box pt={10} m={0}>
                 <Typography variant="h2" gutterBottom fontFamily={'Alef'}>
                     {text}
                 </Typography>
