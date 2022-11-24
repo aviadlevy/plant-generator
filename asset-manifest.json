@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/plant-generator/static/js/main.354116b1.js",
+    "main.js": "/plant-generator/static/js/main.d2838416.js",
     "index.html": "/plant-generator/index.html",
-    "main.354116b1.js.map": "/plant-generator/static/js/main.354116b1.js.map"
+    "main.d2838416.js.map": "/plant-generator/static/js/main.d2838416.js.map"
   },
   "entrypoints": [
-    "static/js/main.354116b1.js"
+    "static/js/main.d2838416.js"
   ]
 }
