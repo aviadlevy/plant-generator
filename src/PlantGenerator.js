@@ -17,14 +17,19 @@ function getSecondWord(firstWord) {
     function addSuffix(word) {
         return word.endsWith("ית");
     }
-    if (getRandomBoolean()) {
+    let totalSecondWords = config.second_word.length + config.prefix_second_word_hey.length + config.prefix_second_word_taf.length;
+    let rand = Math.random();
+    let firstOption = config.second_word.length / totalSecondWords;
+    let secondOption = config.prefix_second_word_taf.length / totalSecondWords;
+    if (rand <= firstOption) {
         return getRandom(config.second_word);
+    } else if (rand <= firstOption + secondOption) {
+        let word = getRandom(config.prefix_second_word_taf)
+        return addSuffix(firstWord) ? word + "ת" : word;
+    } else {
+        let word = getRandom(config.prefix_second_word_hey)
+        return addSuffix(firstWord) ? word + "ה" : word;
     }
-    let word = getRandom(config.prefix_second_word);
-    if (addSuffix(firstWord)) {
-        word += "ת";
-    }
-    return word;
 }
 
 export function generatePlant() {
